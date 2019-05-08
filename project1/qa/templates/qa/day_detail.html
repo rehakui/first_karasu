@@ -1,0 +1,17 @@
+{% extends 'qa/base.html' %}
+
+{% block content %}
+<h3>{{ day.title }}</h3>
+<p class="font-weight-normal">{{ day.text | linebreaksbr | urlize}}</p>
+<p class="text-right font-weight-light">{{ day.date }}</p>
+
+{% for comment in day.comment_set.all %}
+<p>
+  {{ comment.name }}<br>
+  {{ comment.text | linebreaksbr }}<br>
+  {{ comment.date }}
+</p>
+{% endfor %}
+
+<a class="btn btn-outline-primary mb-2" href="{% url 'qa:comment' day.pk %}">回答する</a>
+{% endblock %}

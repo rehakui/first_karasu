@@ -1,0 +1,12 @@
+{% extends 'qa/base.html' %}
+
+{% block content %}
+<form class="" action="" method="POST">
+  <h3>{{ day.title }}</h3>
+  <p class="font-weight-normal">{{ day.text | linebreaksbr | urlize}}</p>
+  <p class="text-right font-weight-light">{{ day.date }}</p>
+  <P>こちらのデータを削除します</p>
+<button type="submit" class="btn btn-outline-primary mb-2">削除</button>
+{% csrf_token %}
+</form>
+{% endblock %}
