@@ -130,4 +130,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_URL = 'admin:login'
 
-
+django_heroku.settings(locals())
